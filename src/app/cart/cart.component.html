@@ -1,3 +1,22 @@
-<p>
-  cart works!
-</p>
+
+
+  <div class="container">
+    <h1>Cart:</h1>
+    <table class="orderTable">
+      <tr class="menuHeader">
+        <td>nazwa</td>
+        <td>type</td>
+        <td>opis</td>
+        <td>cena</td>
+      </tr>
+      <tr class="menu" *ngFor="let dish of order.dishIds">
+        <td class="menuItem" id="name">{{dish.name}}</td>
+        <td class="menuItem" id="type">{{dish.type}}</td>
+        <td class="menuItem" id="desc">{{dish.description}}</td>
+        <td class="menuItem" id="price">{{dish.price}}</td>
+        <button class="detailsbtn" [routerLink]="['/details', dish.id]">Details</button>
+        <button class="removeButton">-</button>
+      </tr>
+    </table>
+  </div>
+

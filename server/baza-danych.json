@@ -55,12 +55,39 @@
       "description": "Sprite 0.5L",
       "type": "drinks",
       "price": "4.50"
+    },
+    {
+      "name": "Pizza Testowa",
+      "isAvailable": true,
+      "description": "Nic",
+      "type": "pizza",
+      "price": "100",
+      "id": 8
+    },
+    {
+      "name": "Pizza Testowa",
+      "isAvailable": true,
+      "description": "Nic",
+      "type": "pizza",
+      "price": "100",
+      "id": 9
+    },
+    {
+      "name": "Pizza Testowa",
+      "isAvailable": true,
+      "description": "Nic",
+      "type": "pizza",
+      "price": "100",
+      "id": 10
     }
   ],
   "orders": [
-      {
-        "id": 1,
-        "dishIds": [1, 5]
+    {
+      "id": 1,
+      "dishIds": [
+        1,
+        5
+      ]
     }
   ],
   "users": [

@@ -1,7 +1,9 @@
 <header>
-  Java Starter Kit Pizza
+  <span>
+    <b id="U">U</b><span id="nicorn">nicorn</span> Pizza
+  </span>
   <div class="menuBar">
-    <button class="btn" [routerLink]="['/menu']">
+    <button class="btn" (click)="navigateToMenu()">
       <h3>Menu</h3>
     </button>
     <button class="btn" [routerLink]="['/cart']">

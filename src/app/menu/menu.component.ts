@@ -1,7 +1,8 @@
 import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
 import {Dish} from '../shared/dish';
 import {MenuService} from '../shared/menu.service';
-import {Subscription} from 'rxjs';
+import {Subject} from 'rxjs';
+import {OrderServiceService} from '../shared/order-service.service';
 
 @Component({
   selector: 'app-menu',
@@ -10,7 +11,14 @@ import {Subscription} from 'rxjs';
 })
 export class MenuComponent implements OnInit , OnDestroy {
   @Output() getPizzas = new EventEmitter<Dish[]>();
-  sub: Subscription;
+  private destroy$: Subject<void> = new Subject<void>();
+  dish: Dish = {
+    'name': 'Pizza Testowa',
+    'isAvailable': true,
+    'description': 'Nic',
+    'type': 'pizza',
+    'price': '100',
+  };
   dishes: Dish[] = [{
     'id': 1,
     'name': 'Pizza Margherita',
@@ -19,30 +27,34 @@ export class MenuComponent implements OnInit , OnDestroy {
     'type': 'pizza',
     'price': '22',
   }];
-  constructor(private menuService: MenuService) { }
+  constructor(private menuService: MenuService,
+              private orderSrtvice: OrderServiceService) { }
 
   ngOnInit() {
-    this.sub = this.menuService.getDishes().subscribe(dishes => this.dishes = dishes);
+    this.menuService.dishes$.subscribe(dishes => this.dishes = dishes);
+    this.menuService.getDishesFromCart();
   }
   getPizza(event: Event) {
-    this.sub = this.menuService.getPizza().subscribe(dishes => this.dishes = dishes);
+    this.menuService.getPizza().subscribe(dishes => this.dishes = dishes);
     event.stopPropagation();
   }
   getPasta(event: Event) {
-    this.sub = this.menuService.getPasta().subscribe(dishes => this.dishes = dishes);
+    this.menuService.getPasta().subscribe(dishes => this.dishes = dishes);
     event.stopPropagation();
   }
   getDrinks(event: Event) {
-    this.sub = this.menuService.getDrinks().subscribe(dishes => this.dishes = dishes);
+    this.menuService.getDrinks().subscribe(dishes => this.dishes = dishes);
     event.stopPropagation();
   }
-  getMenu(event: Event) {
-    this.sub = this.menuService.getDishes().subscribe(dishes => this.dishes = dishes);
+  addDish() {
+    this.menuService.addDishToCart(this.dish);
     event.stopPropagation();
   }
   ngOnDestroy(): void {
-    this.sub.unsubscribe();
+    this.destroy$.next();
+    this.destroy$.complete();
   }
-
-
+  addDishToCart(){
+    this.orderSrtvice.addDishToCart(this.dish);
+  }
 }

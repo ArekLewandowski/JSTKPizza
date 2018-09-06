@@ -8,26 +8,21 @@
   <button (click)="getDrinks($event)" class="btn" [routerLink]="['/menu']">
     <span>Drinks</span>
   </button>
-  <button (click)="getMenu($event)" class="btn" [routerLink]="['/menu']">
-    <span>All</span>
-  </button>
 </div>
 <div class="container">
+<div class="menuCont">
   <h1>Menu: </h1>
   <table class="menuTable">
-    <!--<tr class="menuHeader">-->
-      <!--<td>nazwa</td>-->
-      <!--<td>typ</td>-->
-      <!--<td>opis</td>-->
-      <!--<td>cena</td>-->
-    <!--</tr>-->
     <tr class="menu" *ngFor="let dish of dishes">
       <td class="menuItem" id="name">{{dish.name}}</td>
       <td class="menuItem" id="type">{{dish.type}}</td>
       <td class="menuItem" id="desc">{{dish.description}}</td>
       <td class="menuItem" id="price">{{dish.price}}</td>
-      <button class="detailsbtn" [routerLink]="['/details']">Details</button>
-      <button class="addButton">+</button>
+      <button class="detailsbtn" [routerLink]="['/details', dish.id]">Details</button>
+      <button class="addButton" (click)="addDishToCart()">+</button>
     </tr>
   </table>
+    <button (click)="addDish()" [routerLink]="['/menu']">add</button>
+  </div>
+<app-cart></app-cart>
 </div>

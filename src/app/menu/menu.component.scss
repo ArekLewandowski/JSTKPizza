@@ -1,13 +1,24 @@
-.container td{
+.menuCont td{
   border-bottom: 1px solid black;
   border-right: 1px solid black;
 }
 
-.container tr:hover {
+.menuCont tr:hover {
   background-color: antiquewhite;
 }
 
-.container {
+.container{
+  display: flex;
+  border-bottom: 1px solid deepskyblue;
+  border-right: 1px solid deepskyblue;
+  background-color: aqua;
+  border-radius: 5%;
+  text-align: center;
+  padding: 4%;
+  margin: 3%;
+}
+
+.menuCont {
   border-bottom: 1px solid deepskyblue;
   border-right: 1px solid deepskyblue;
   background-color: azure;
