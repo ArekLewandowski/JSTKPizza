@@ -1,26 +1,34 @@
-import { Injectable } from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {Injectable} from '@angular/core';
 import {Dish} from './dish';
 import {Order} from './order';
-import {Observable, Subject} from 'rxjs';
+import {Subject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OrderServiceService {
-  dishes$ = new Subject<Dish[]>();
-  dishesAdded: Dish[];
+  order: Order;
+  dishesAdded = (JSON.parse(localStorage.getItem('dishesAdded') ? localStorage.getItem('dishesAdded') : '[]') as Dish[]);
+  private dishIndex: number;
+  sum$: Subject<number> = new Subject();
 
-  constructor(private httpClient: HttpClient) { }
+  constructor() {
+  }
 
   addDishToCart(dish: Dish) {
+    this.sum$.next(dish.price);
     this.dishesAdded.push(dish);
-    // this.httpClient.post('http://localhost:3000/dishes', dish).subscribe(
-    //   re => this.getDishesFromCart()
-    // );
+    localStorage.setItem('dishesAdded', JSON.stringify(this.dishesAdded));
   }
-  // getDishesFromCart(): {
-  //   this.dishesAdded;
-  //   // this.httpClient.get<Dish[]>('http://localhost:3000/dishes').subscribe(dishes => this.dishes$.next(dishes));
-  // }
+
+  getDishesFromCart(): Dish[] {
+    return this.dishesAdded;
+  }
+
+  removeFromCart(dish: Dish) {
+    this.sum$.next(-dish.price);
+    this.dishIndex = this.dishesAdded.indexOf(dish);
+    this.dishesAdded.splice(this.dishIndex, 1);
+    localStorage.setItem('dishesAdded', JSON.stringify(this.dishesAdded));
+  }
 }

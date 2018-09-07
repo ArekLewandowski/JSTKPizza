@@ -19,10 +19,10 @@
       <td class="menuItem" id="desc">{{dish.description}}</td>
       <td class="menuItem" id="price">{{dish.price}}</td>
       <button class="detailsbtn" [routerLink]="['/details', dish.id]">Details</button>
-      <button class="addButton" (click)="addDishToCart()">+</button>
+      <button class="addButton" id="dish.id" (click)="addDishToCart(dish)">+</button>
     </tr>
   </table>
-    <button (click)="addDish()" [routerLink]="['/menu']">add</button>
+    <!--<button (click)="addDish()" [routerLink]="['/menu']">add</button>-->
   </div>
 <app-cart></app-cart>
 </div>

@@ -9,6 +9,7 @@ import {MenuService} from './shared/menu.service';
 })
 export class AppComponent {
   title = 'pizza';
+  user: string;
 
   constructor(private menuService: MenuService, private router: Router) {}
 

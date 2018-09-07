@@ -6,7 +6,7 @@
       "isAvailable": true,
       "description": "Sos, ser",
       "type": "pizza",
-      "price": "22"
+      "price": 22
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "isAvailable": true,
       "description": "Sos, ser, pieczarki",
       "type": "pizza",
-      "price": "23.50"
+      "price": 23.50
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "isAvailable": true,
       "description": "Chorizo, chili, tomatoes",
       "type": "pizza",
-      "price": "23.90"
+      "price": 23.90
     },
     {
       "id": 4,
@@ -30,7 +30,7 @@
       "isAvailable": false,
       "description": "Sos boloński",
       "type": "pasta",
-      "price": "14"
+      "price": 14
     },
     {
       "id": 5,
@@ -38,7 +38,7 @@
       "isAvailable": true,
       "description": "Sos boloński z szynką i kukurydzą",
       "type": "pasta",
-      "price": "17.50"
+      "price": 17.50
     },
     {
       "id": 6,
@@ -46,7 +46,7 @@
       "isAvailable": true,
       "description": "Coca-cola 0.5L",
       "type": "drinks",
-      "price": "4.50"
+      "price": 4.50
     },
     {
       "id": 7,
@@ -54,31 +54,55 @@
       "isAvailable": true,
       "description": "Sprite 0.5L",
       "type": "drinks",
-      "price": "4.50"
+      "price": 4.50
     },
     {
-      "name": "Pizza Testowa",
+      "id": 8,
+      "name": "Fanta",
       "isAvailable": true,
-      "description": "Nic",
-      "type": "pizza",
-      "price": "100",
-      "id": 8
+      "description": "Fanta 0.5L",
+      "type": "drinks",
+      "price": 4.50
     },
     {
-      "name": "Pizza Testowa",
+      "id": 9,
+      "name": "Apple juice",
       "isAvailable": true,
-      "description": "Nic",
-      "type": "pizza",
-      "price": "100",
-      "id": 9
+      "description": "Juice 0.4L",
+      "type": "drinks",
+      "price": 5.50
     },
     {
-      "name": "Pizza Testowa",
+      "id": 10,
+      "name": "Orange juice",
       "isAvailable": true,
-      "description": "Nic",
+      "description": "Juice 0.4L",
+      "type": "drinks",
+      "price": 5.50
+    },
+    {
+      "id": 11,
+      "name": "Pizza Carbonarra",
+      "isAvailable": true,
+      "description": "Sos, ser, cream",
       "type": "pizza",
-      "price": "100",
-      "id": 10
+      "price": "24"
+    },
+    {
+      "id": 12,
+      "name": "Pizza Kebab",
+      "isAvailable": true,
+      "description": "Sos, ser, kebab",
+      "type": "pizza",
+      "price": 23.50
+    },
+    {
+      "id": 13,
+      "name": "Pizza Vege",
+      "isAvailable": true,
+      "description": "Vege cheese, chili, tomatoes",
+      "type": "pizza",
+      "price": 26.90
     }
   ],
   "orders": [
@@ -95,6 +119,16 @@
       "id": 1,
       "name": "admin",
       "password": "admin"
+    }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "name": "Pizza Margherita",
+      "isAvailable": true,
+      "description": "Sos, ser",
+      "type": "pizza",
+      "price": "22"
     }
   ]
 }

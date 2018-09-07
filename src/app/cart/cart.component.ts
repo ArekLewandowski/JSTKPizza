@@ -1,52 +1,37 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, EventEmitter, Input, OnDestroy, OnInit, Output} from '@angular/core';
 import {MenuService} from '../shared/menu.service';
 import {Order} from '../shared/order';
+import {OrderServiceService} from '../shared/order-service.service';
+import {Subject} from 'rxjs';
+import {Dish} from '../shared/dish';
+import {takeUntil} from 'rxjs/operators';
 
 @Component({
   selector: 'app-cart',
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.scss']
 })
-export class CartComponent implements OnInit {
+export class CartComponent implements OnInit, OnDestroy {
   @Output() getPizzas = new EventEmitter<Order>();
-  order: Order = {
-    id: 1,
-    dishIds: [
-      {
-      'id': 1,
-      'name': 'Pizza Margherita',
-      'isAvailable': true,
-      'description': 'Sos, ser',
-      'type': 'pizza',
-      'price': '22'
-    },
-      {
-        'id': 2,
-        'name': 'Pizza Funghi',
-        'isAvailable': true,
-        'description': 'Sos, ser, pieczarki',
-        'type': 'pizza',
-        'price': '23.50'
-      },
-      {
-        'id': 3,
-        'name': 'Pizza Espana',
-        'isAvailable': true,
-        'description': 'Chorizo, chili, tomatoes',
-        'type': 'pizza',
-        'price': '23.90'
-      },
-    ],
-    address: 'Poznań',
-    description: 'None',
-    state: 'ORDERED',
-    price: '22',
-};
+  private destroy$: Subject<void> = new Subject<void>();
+  private dishes: Dish[] = [];
+  sum: number;
 
-  constructor(private menuService: MenuService) {
+  constructor(private menuService: MenuService,
+              private orderService: OrderServiceService) {
   }
 
   ngOnInit() {
+      this.dishes = this.orderService.getDishesFromCart();
+      this.orderService.sum$
+        .pipe(takeUntil(this.destroy$))
+        .subscribe(price => this.sum + price );
   }
-
+  removeFromCart(dish: Dish) {
+    this.orderService.removeFromCart(dish);
+  }
+  ngOnDestroy(): void {
+    this.destroy$.next();
+    this.destroy$.complete();
+  }
 }

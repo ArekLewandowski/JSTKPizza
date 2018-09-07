@@ -14,6 +14,8 @@ import { OrderListComponent } from './order-list/order-list.component';
 import { AdministrationComponent } from './administration/administration.component';
 import { CartComponent } from './cart/cart.component';
 import { FormComponent } from './form/form.component';
+import {AuthService} from './shared/auth.service';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { FormComponent } from './form/form.component';
     OrderListComponent,
     AdministrationComponent,
     CartComponent,
-    FormComponent
+    FormComponent,
+    LoginComponent
   ],
   imports: [
     HttpClientModule,
@@ -33,7 +36,7 @@ import { FormComponent } from './form/form.component';
     AppRoutingModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

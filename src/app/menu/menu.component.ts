@@ -3,6 +3,7 @@ import {Dish} from '../shared/dish';
 import {MenuService} from '../shared/menu.service';
 import {Subject} from 'rxjs';
 import {OrderServiceService} from '../shared/order-service.service';
+import {takeUntil} from 'rxjs/operators';
 
 @Component({
   selector: 'app-menu',
@@ -12,12 +13,13 @@ import {OrderServiceService} from '../shared/order-service.service';
 export class MenuComponent implements OnInit , OnDestroy {
   @Output() getPizzas = new EventEmitter<Dish[]>();
   private destroy$: Subject<void> = new Subject<void>();
+  order: Dish[];
   dish: Dish = {
     'name': 'Pizza Testowa',
     'isAvailable': true,
     'description': 'Nic',
     'type': 'pizza',
-    'price': '100',
+    'price': 100,
   };
   dishes: Dish[] = [{
     'id': 1,
@@ -25,36 +27,41 @@ export class MenuComponent implements OnInit , OnDestroy {
     'isAvailable': true,
     'description': 'Sos, ser',
     'type': 'pizza',
-    'price': '22',
+    'price': 22,
   }];
   constructor(private menuService: MenuService,
-              private orderSrtvice: OrderServiceService) { }
+              private orderService: OrderServiceService) { }
 
   ngOnInit() {
-    this.menuService.dishes$.subscribe(dishes => this.dishes = dishes);
+    this.menuService.dishes$
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(dishes => this.dishes = dishes);
     this.menuService.getDishesFromCart();
   }
   getPizza(event: Event) {
-    this.menuService.getPizza().subscribe(dishes => this.dishes = dishes);
-    event.stopPropagation();
+    this.menuService.getPizza()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(dishes => this.dishes = dishes);
   }
   getPasta(event: Event) {
-    this.menuService.getPasta().subscribe(dishes => this.dishes = dishes);
-    event.stopPropagation();
+    this.menuService.getPasta()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(dishes => this.dishes = dishes);
   }
   getDrinks(event: Event) {
-    this.menuService.getDrinks().subscribe(dishes => this.dishes = dishes);
-    event.stopPropagation();
+    this.menuService.getDrinks()
+      .pipe(takeUntil(this.destroy$))
+      .subscribe(dishes => this.dishes = dishes);
   }
   addDish() {
     this.menuService.addDishToCart(this.dish);
-    event.stopPropagation();
+  }
+  addDishToCart(dish: Dish) {
+    this.orderService.addDishToCart(dish);
   }
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
   }
-  addDishToCart(){
-    this.orderSrtvice.addDishToCart(this.dish);
-  }
+
 }
