@@ -19,7 +19,7 @@ export class DishDetailsComponent implements OnInit, OnDestroy {
     'isAvailable': true,
     'description': 'Sos, ser',
     'type': 'pizza',
-    'price': '22',
+    'price': 22,
   };
   constructor(
     private readonly route: ActivatedRoute,

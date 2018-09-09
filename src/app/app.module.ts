@@ -16,6 +16,7 @@ import { CartComponent } from './cart/cart.component';
 import { FormComponent } from './form/form.component';
 import {AuthService} from './shared/auth.service';
 import { LoginComponent } from './login/login.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { LoginComponent } from './login/login.component';
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [AuthService],

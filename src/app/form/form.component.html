@@ -1,3 +1,79 @@
-<p>
-  form works!
-</p>
+<div class="container" [hidden]="submitted">
+  <h1>Address Form</h1>
+  <form (ngSubmit)="onSubmit()" #addressForm='ngForm'>
+    <div class="form-group">
+      <label for="firstName">First Name </label><br>
+      <input type="text" class="form-control" id="firstName"
+             required
+             [(ngModel)]="model.firstName"
+             name='firstName'
+             #firstName="ngModel">
+      <div [hidden]='firstName.valid || firstName.pristine'
+           class="alert">
+        First Name is required
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="lastName">Last Name </label><br>
+      <input type="text" class="form-control" id="lastName"
+             required
+             [(ngModel)]="model.lastName"
+             name='lastName'
+             #lastName="ngModel">
+      <div [hidden]='lastName.valid || lastName.pristine'
+           class="alert">
+        Last Name is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="street">Street </label><br>
+      <input type="text" class="form" id="street"
+             [(ngModel)]="model.street"
+             name='street'>
+    </div>
+    <div class="form-group">
+      <label for="flatNr">Nr </label><br>
+      <input type="number" class="form" id="flatNr"
+             [(ngModel)]="model.flatNr"
+             name='flatNr'>
+    </div>
+    <div class="form-group">
+      <label for="city">City </label><br>
+      <input type="text" class="form" id="city"
+             [(ngModel)]="model.city"
+             name='city'>
+    </div>
+    <div class="form-group">
+      <label for="postCode">Post Code </label><br>
+      <input type="number" class="form" id="postCode"
+             [(ngModel)]="model.postCode"
+             name='postCode'>
+    </div>
+
+    <button type="submit" class="btn"
+            [disabled]="!addressForm.form.valid">Submit
+    </button>
+    <button type="button" (click)="newAddressData();
+    addressForm.reset()">New Address
+    </button>
+  </form>
+</div>
+
+<div [hidden]="!submitted">
+  <h2>You submitted the following:</h2>
+  <div class="row">
+    <div class="col-xs-3">First Name</div>
+    <div class="col-xs-9  pull-left">{{ model.firstName }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">Last Name</div>
+    <div class="col-xs-9 pull-left">{{ model.lastName }}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">Address</div>
+    <div class="col-xs-9 pull-left">{{ model.street }} {{model.flatNr}}, {{model.postCode}} {{model.city}}</div>
+  </div>
+  <br>
+  <button class="btn btn-primary" (click)="submitted = false">Edit</button>
+</div>
