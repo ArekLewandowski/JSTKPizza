@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {LoginService} from '../shared/login.service';
 
 @Component({
   selector: 'app-administration',
@@ -11,5 +12,4 @@ export class AdministrationComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

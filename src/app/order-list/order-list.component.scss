@@ -1,0 +1,30 @@
+.menuTable td{
+  border-bottom: 1px solid black;
+  border-right: 1px solid black;
+}
+
+.menuTable tr:hover {
+  background-color: antiquewhite;
+}
+
+.container{
+  display: flex;
+  border-bottom: 1px solid deepskyblue;
+  border-right: 1px solid deepskyblue;
+  background-color: gray;
+  border-radius: 5%;
+  text-align: center;
+  padding: 4%;
+  margin: 3%;
+}
+
+.menuTable {
+  border-bottom: 1px solid deepskyblue;
+  border-right: 1px solid deepskyblue;
+  background-color: azure;
+  border-radius: 5%;
+  text-align: center;
+  padding: 4%;
+  margin: 3%;
+  width: 40vw;
+}

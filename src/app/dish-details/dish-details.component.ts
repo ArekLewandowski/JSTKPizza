@@ -16,10 +16,10 @@ export class DishDetailsComponent implements OnInit, OnDestroy {
   dish: Dish = {
     'id': 1,
     'name': 'Pizza Margherita',
-    'isAvailable': true,
     'description': 'Sos, ser',
     'type': 'pizza',
     'price': 22,
+    'available': true
   };
   constructor(
     private readonly route: ActivatedRoute,

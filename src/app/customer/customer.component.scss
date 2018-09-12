@@ -1,1 +1,26 @@
-
+.customer{
+  display: flex;
+  justify-content: space-around;
+  padding: 5%;
+  background-color: rgba(145, 171, 109, 0.7);
+  margin: 5%;
+  border-radius: 10%;
+}
+.main{
+  text-align: center;
+}
+app-cart{
+  width: 20%;
+}
+app-form{
+  width: 20%;
+}
+.confirm{
+  font-size: 20px;
+  font-family: 'M PLUS Rounded 1c', sans-serif;
+  padding: 1%;
+  margin: 1%;
+  background-color: #a94442;
+  border-radius: 10%;
+  border: 2px #a73331 solid;
+}

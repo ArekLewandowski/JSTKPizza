@@ -3,14 +3,23 @@
     <b id="U">U</b><span id="nicorn">nicorn</span> Pizza
   </span>
   <div class="menuBar">
-    <button class="btn" (click)="navigateToMenu()">
-      <h3>Menu</h3>
+    <button class="btn" (click)="navigateToMenu()" *ngIf="!isAdmin()">
+      <h3><i class="fas fa-utensils fa-2x"></i></h3>
     </button>
-    <button class="btn" [routerLink]="['/cart']">
-      <h3>Cart</h3>
+    <button class="btn" [routerLink]="['/cart']" *ngIf="!isAdmin()">
+      <h3><i class="fas fa-cart-arrow-down fa-2x" ></i></h3>
     </button>
-    <button class="btn" [routerLink]="['/login']">
-      <h3>Login</h3>
+    <button class="btn" [routerLink]="['/login']" *ngIf="!isAdmin()">
+      <h3><i class="fas fa-sign-in-alt fa-2x"></i></h3>
+    </button>
+    <button class="btn" [routerLink]="['/orders']" *ngIf="isAdmin()">
+      <h3><i class="fas fa-clipboard-list fa-2x"></i></h3>
+    </button>
+    <button class="btn" [routerLink]="['/adminmenu']" *ngIf="isAdmin()">
+      <h3><i class="fas fa-utensils fa-2x"></i></h3>
+    </button>
+    <button class="btn" (click)="logout()" *ngIf="isAdmin()">
+      <h3><i class="fas fa-sign-out-alt fa-2x"></i></h3>
     </button>
   </div>
 </header>

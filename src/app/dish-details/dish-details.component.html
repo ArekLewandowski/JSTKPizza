@@ -1,5 +1,9 @@
-<div class="dishDetails"><h1>Danie: {{dish.name}}</h1>
-<p>{{dish.type}}</p>
-<p>Description: {{dish.description}}</p>
-<h2>Price: {{dish.price}}</h2>
+<div class="container">
+  <div class="dishDetails"><h1>Danie: {{dish.name}}</h1>
+    <p>{{dish.type}}</p>
+    <p>Description: {{dish.description}}</p>
+    <h2>Price: {{dish.price}}</h2>
+  </div>
 </div>
+  <button class="backBtn" [routerLink]="['/adminmenu']"> Back to list</button>
+

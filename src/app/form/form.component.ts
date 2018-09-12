@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AddressFormData} from '../shared/address-form-data';
+import {OrderServiceService} from '../shared/order-service.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-form',
@@ -8,17 +10,24 @@ import { AddressFormData} from '../shared/address-form-data';
 })
 export class FormComponent implements OnInit {
 
-  model = new AddressFormData(1, 'Arek', 'Lewandowski', 'Batorego', 7, 'Poznań', 60687);
+  model = new AddressFormData(1, '', '', '', null , '', null );
   submitted = false;
-  onSubmit() { this.submitted = true}
+  onSubmit(address: AddressFormData) { this.submitted = true;
+    this.orderService.addAddress(address);
+  }
   get diagnostic() { return JSON.stringify(this.model); }
-  constructor() {
+  constructor(private orderService: OrderServiceService,
+              private router: Router) {
   }
 
   ngOnInit() {
   }
   newAddressData() {
     this.model = new AddressFormData(1, ' ', ' ', ' ', 0, '', 0);
+  }
+  confirmOrder() {
+    this.orderService.confirmOrder();
+    this.router.navigate(['admin']);
   }
 
 }

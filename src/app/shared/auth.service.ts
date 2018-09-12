@@ -2,19 +2,20 @@ import {Injectable} from '@angular/core';
 import {ActivatedRouteSnapshot, CanActivate, Router, RouterStateSnapshot} from '@angular/router';
 
 @Injectable({
-  providedIn:  'root'
+  providedIn: 'root'
 })
-export class AuthService implements CanActivate {
+export class AuthService implements CanActivate {
+  isLogged = false;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) {
+  }
 
-  canActivate(route: ActivatedRouteSnapshot,  state: RouterStateSnapshot):   boolean {
-    const isLogged =  true;
-    if  (isLogged) {
+  canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+    if (this.isLogged) {
       return true;
-    } else {
-      this.router.navigate(['details/2']);
+    } else {
+      this.router.navigate(['menu']);
       return false;
     }
   }
-} 
+}

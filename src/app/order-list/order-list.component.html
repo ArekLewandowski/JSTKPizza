@@ -1,3 +1,12 @@
-<p>
-  order-list works!
-</p>
+<div class="menuCont">
+  <h1>Orders: </h1>
+  <table class="menuTable">
+    <tr class="menu" *ngFor="let order of orders">
+      <td class="menuItem" id="Order id: ">{{order.id}}</td>
+      <td class="menuItem" id="Name: ">{{order.address.firstName}} {{order.address.lastName}}</td>
+      <td class="menuItem"><span *ngFor="let dish of order.dishIds">{{dish.id}}, </span></td>
+      <td class="menuItem" id="status: ">{{order.status | uppercase}}</td>
+      <button class="detailsbtn" [routerLink]="['/orders', order.id]"><i class="fas fa-info-circle"></i></button>
+    </tr>
+  </table>
+</div>

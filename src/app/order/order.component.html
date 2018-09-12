@@ -1,3 +1,16 @@
-<p>
-  order works!
-</p>
+<div class="container">
+  <div class="orderDetails"><h1>Order: {{order.id}}</h1>
+    <p>User: {{order.address.firstName}} {{order.address.lastName}}</p>
+    <p>Ordered: <span *ngFor="let dish of order.dishIds"><br>{{dish.name}}, </span></p>
+    <h2>Status: {{order.status}}</h2>
+  </div>
+  <div>
+    <h2>Change status: </h2>
+    <div>
+      <button class="btn" id="prepared" (click)="changeStatus('prepared')">Prepared</button>
+      <button class="btn" id="send" (click)="changeStatus('send')">Send</button>
+      <button class="btn" id="completed" (click)="changeStatus('completed')">Completed</button>
+    </div>
+  </div>
+</div>
+<button class="backBtn" [routerLink]="['/orders']"> Back to list</button>

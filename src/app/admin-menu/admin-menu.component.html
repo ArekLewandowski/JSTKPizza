@@ -1,0 +1,35 @@
+<div class="menuBar">
+  <button (click)="getPizza($event)" class="btn" [routerLink]="['/adminmenu']">
+    <span>Pizza</span>
+  </button>
+  <button (click)="getPasta($event)" class="btn" [routerLink]="['/adminmenu']">
+    <span>Pasta</span>
+  </button>
+  <button (click)="getDrinks($event)" class="btn" [routerLink]="['/adminmenu']">
+    <span>Drinks</span>
+  </button>
+</div>
+<div class="container">
+  <div class="menuCont">
+    <h1>Menu: </h1>
+    <table class="menuTable">
+      <tr class="menu" *ngFor="let dish of dishes">
+        <td class="menuItem" id="name">{{dish.name}}</td>
+        <td class="menuItem" id="type">{{dish.type}}</td>
+        <td class="menuItem" id="desc">{{dish.description}}</td>
+        <td class="menuItem" id="price">{{dish.price}}</td>
+        <td class="menuItem" id="status">{{dish.available}}</td>
+        <button class="detailsbtn" [routerLink]="['/details', dish.id]"><i class="fas fa-info-circle fa-2x"></i></button>
+        <button class="availableButton" id="avaDish"
+                (click)="setAvailable(dish)" *ngIf="dish.available === false">
+          <i class="fas fa-times fa-2x"></i>
+        </button>
+        <button class="availableButton" id="notAvaDish"
+                (click)="setNotAvailable(dish)" *ngIf="dish.available === true">
+          <i class="fas fa-check fa-2x"></i>
+        </button>
+      </tr>
+    </table>
+  </div>
+</div>
+

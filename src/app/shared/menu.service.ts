@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable, Subject} from 'rxjs';
 import {Dish} from './dish';
+import {Order} from './order';
 
 @Injectable({
   providedIn: 'root'
@@ -33,5 +34,11 @@ export class MenuService {
   }
   getDishesFromCart(): void {
     this.httpClient.get<Dish[]>('http://localhost:3000/dishes').subscribe(dishes => this.dishes$.next(dishes));
+  }
+  setAvailable(dish: Dish) {
+    this.httpClient.put(`http://localhost:3000/dishes/` + dish.id, dish).subscribe();
+  }
+  setNotAvailable(dish: Dish) {
+    this.httpClient.put(`http://localhost:3000/dishes/` + dish.id, dish).subscribe();
   }
 }

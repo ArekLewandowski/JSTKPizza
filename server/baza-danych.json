@@ -3,10 +3,11 @@
     {
       "id": 1,
       "name": "Pizza Margherita",
-      "isAvailable": true,
+      "isAvailable": false,
       "description": "Sos, ser",
       "type": "pizza",
-      "price": 22
+      "price": 22,
+      "available": false
     },
     {
       "id": 2,
@@ -14,7 +15,8 @@
       "isAvailable": true,
       "description": "Sos, ser, pieczarki",
       "type": "pizza",
-      "price": 23.50
+      "price": 23.5,
+      "available": true
     },
     {
       "id": 3,
@@ -22,7 +24,8 @@
       "isAvailable": true,
       "description": "Chorizo, chili, tomatoes",
       "type": "pizza",
-      "price": 23.90
+      "price": 23.9,
+      "available": true
     },
     {
       "id": 4,
@@ -30,63 +33,71 @@
       "isAvailable": false,
       "description": "Sos boloński",
       "type": "pasta",
-      "price": 14
+      "price": 14,
+      "available": true
     },
     {
       "id": 5,
       "name": "Spagetti Siciliana",
-      "isAvailable": true,
+      "isAvailable": false,
       "description": "Sos boloński z szynką i kukurydzą",
       "type": "pasta",
-      "price": 17.50
+      "price": 17.5,
+      "available": true
     },
     {
       "id": 6,
       "name": "Coca-cola",
-      "isAvailable": true,
+      "isAvailable": false,
       "description": "Coca-cola 0.5L",
       "type": "drinks",
-      "price": 4.50
+      "price": 4.5,
+      "available": true
     },
     {
       "id": 7,
       "name": "Sprite",
-      "isAvailable": true,
+      "isAvailable": false,
       "description": "Sprite 0.5L",
       "type": "drinks",
-      "price": 4.50
+      "price": 4.5,
+      "available": false
     },
     {
       "id": 8,
       "name": "Fanta",
-      "isAvailable": true,
+      "isAvailable": false,
       "description": "Fanta 0.5L",
       "type": "drinks",
-      "price": 4.50
+      "price": 4.5,
+      "available": false
     },
     {
       "id": 9,
       "name": "Apple juice",
-      "isAvailable": true,
+      "isAvailable": false,
       "description": "Juice 0.4L",
       "type": "drinks",
-      "price": 5.50
+      "price": 5.5,
+      "available": true
     },
     {
       "id": 10,
       "name": "Orange juice",
-      "isAvailable": true,
+      "isAvailable": false,
       "description": "Juice 0.4L",
       "type": "drinks",
-      "price": 5.50
+      "price": 5.5,
+      "available": true
     },
     {
       "id": 11,
       "name": "Pizza Carbonarra",
-      "isAvailable": true,
+      "isAvailable": false,
       "description": "Sos, ser, cream",
       "type": "pizza",
-      "price": "24"
+      "price": "24",
+      "available": true
     },
     {
       "id": 12,
@@ -94,24 +105,298 @@
       "isAvailable": true,
       "description": "Sos, ser, kebab",
       "type": "pizza",
-      "price": 23.50
+      "price": 23.5,
+      "available": true
     },
     {
       "id": 13,
       "name": "Pizza Vege",
-      "isAvailable": true,
+      "isAvailable": false,
       "description": "Vege cheese, chili, tomatoes",
       "type": "pizza",
-      "price": 26.90
+      "price": 26.9,
+      "available": true
     }
   ],
   "orders": [
     {
       "id": 1,
       "dishIds": [
-        1,
-        5
-      ]
+        {
+          "id": 1,
+          "name": "Pizza Margherita",
+          "isAvailable": false,
+          "description": "Sos, ser",
+          "type": "pizza",
+          "price": 22,
+          "available": true
+        },
+        {
+          "id": 2,
+          "name": "Pizza Funghi",
+          "isAvailable": true,
+          "description": "Sos, ser, pieczarki",
+          "type": "pizza",
+          "price": 23.5,
+          "available": true
+        },
+        {
+          "id": 6,
+          "name": "Coca-cola",
+          "isAvailable": false,
+          "description": "Coca-cola 0.5L",
+          "type": "drinks",
+          "price": 4.5,
+          "available": true
+        },
+        {
+          "id": 11,
+          "name": "Pizza Carbonarra",
+          "isAvailable": false,
+          "description": "Sos, ser, cream",
+          "type": "pizza",
+          "price": "24",
+          "available": true
+        }
+      ],
+      "address": {
+        "id": 1,
+        "firstName": "John",
+        "lastName": "Lewandowski",
+        "street": "Batorego",
+        "flatNr": null,
+        "city": "Poznań",
+        "postCode": 60687
+      },
+      "status": "send"
+    },
+    {
+      "id": 2,
+      "dishIds": [
+        {
+          "id": 6,
+          "name": "Coca-cola",
+          "isAvailable": false,
+          "description": "Coca-cola 0.5L",
+          "type": "drinks",
+          "price": 4.5,
+          "available": true
+        },
+        {
+          "id": 11,
+          "name": "Pizza Carbonarra",
+          "isAvailable": false,
+          "description": "Sos, ser, cream",
+          "type": "pizza",
+          "price": "24",
+          "available": true
+        }
+      ],
+      "address": {
+        "id": 1,
+        "firstName": "Bruce",
+        "lastName": "Lee",
+        "street": "Hong Kong",
+        "flatNr": 1,
+        "city": "HK",
+        "postCode": 212323
+      },
+      "status": "completed"
+    },
+    {
+      "dishIds": [
+        {
+          "id": 6,
+          "name": "Coca-cola",
+          "isAvailable": false,
+          "description": "Coca-cola 0.5L",
+          "type": "drinks",
+          "price": 4.5,
+          "available": true
+        },
+        {
+          "id": 11,
+          "name": "Pizza Carbonarra",
+          "isAvailable": false,
+          "description": "Sos, ser, cream",
+          "type": "pizza",
+          "price": "24",
+          "available": true
+        }
+      ],
+      "address": {
+        "id": 1,
+        "firstName": "Elton",
+        "lastName": "John",
+        "street": "Batorego",
+        "flatNr": null,
+        "city": "Poznań",
+        "postCode": 60687
+      },
+      "status": "prepared",
+      "id": 3
+    },
+    {
+      "id": 4,
+      "dishIds": [
+        {
+          "id": 6,
+          "name": "Coca-cola",
+          "isAvailable": false,
+          "description": "Coca-cola 0.5L",
+          "type": "drinks",
+          "price": 4.5,
+          "available": true
+        },
+        {
+          "id": 11,
+          "name": "Pizza Carbonarra",
+          "isAvailable": false,
+          "description": "Sos, ser, cream",
+          "type": "pizza",
+          "price": "24",
+          "available": true
+        },
+        {
+          "id": 3,
+          "name": "Pizza Espana",
+          "isAvailable": true,
+          "description": "Chorizo, chili, tomatoes",
+          "type": "pizza",
+          "price": 23.9,
+          "available": true
+        },
+        {
+          "id": 4,
+          "name": "Spagetti Bolognese",
+          "isAvailable": false,
+          "description": "Sos boloński",
+          "type": "pasta",
+          "price": 14,
+          "available": true
+        }
+      ],
+      "address": {
+        "id": 1,
+        "firstName": "Al",
+        "lastName": "Lewandowski",
+        "street": "Batorego",
+        "flatNr": null,
+        "city": "Poznań",
+        "postCode": 60687
+      },
+      "status": "Confirmed"
+    },
+    {
+      "dishIds": [
+        {
+          "id": 11,
+          "name": "Pizza Carbonarra",
+          "isAvailable": false,
+          "description": "Sos, ser, cream",
+          "type": "pizza",
+          "price": "24",
+          "available": true
+        },
+        {
+          "id": 3,
+          "name": "Pizza Espana",
+          "isAvailable": true,
+          "description": "Chorizo, chili, tomatoes",
+          "type": "pizza",
+          "price": 23.9,
+          "available": true
+        },
+        {
+          "id": 4,
+          "name": "Spagetti Bolognese",
+          "isAvailable": false,
+          "description": "Sos boloński",
+          "type": "pasta",
+          "price": 14,
+          "available": true
+        },
+        {
+          "id": 1,
+          "name": "Pizza Margherita",
+          "isAvailable": false,
+          "description": "Sos, ser",
+          "type": "pizza",
+          "price": 22,
+          "available": true
+        },
+        {
+          "id": 7,
+          "name": "Sprite",
+          "isAvailable": false,
+          "description": "Sprite 0.5L",
+          "type": "drinks",
+          "price": 4.5,
+          "available": true
+        },
+        {
+          "id": 8,
+          "name": "Fanta",
+          "isAvailable": false,
+          "description": "Fanta 0.5L",
+          "type": "drinks",
+          "price": 4.5,
+          "available": true
+        }
+      ],
+      "address": {
+        "id": 1,
+        "firstName": "John",
+        "lastName": "Lenon",
+        "street": "Londyn",
+        "flatNr": 11,
+        "city": "Londyn",
+        "postCode": 0
+      },
+      "status": "Confirmed",
+      "id": 5
+    },
+    {
+      "dishIds": [
+        {
+          "id": 3,
+          "name": "Pizza Espana",
+          "isAvailable": true,
+          "description": "Chorizo, chili, tomatoes",
+          "type": "pizza",
+          "price": 23.9,
+          "available": true
+        },
+        {
+          "id": 1,
+          "name": "Pizza Margherita",
+          "isAvailable": false,
+          "description": "Sos, ser",
+          "type": "pizza",
+          "price": 22,
+          "available": true
+        },
+        {
+          "id": 8,
+          "name": "Fanta",
+          "isAvailable": false,
+          "description": "Fanta 0.5L",
+          "type": "drinks",
+          "price": 4.5,
+          "available": true
+        }
+      ],
+      "address": {
+        "id": 1,
+        "firstName": "John",
+        "lastName": "Goodman",
+        "street": "4 Av",
+        "flatNr": null,
+        "city": "NY",
+        "postCode": 99900
+      },
+      "status": "Confirmed",
+      "id": 6
     }
   ],
   "users": [

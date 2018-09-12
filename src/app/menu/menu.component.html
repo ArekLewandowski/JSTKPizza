@@ -14,15 +14,14 @@
   <h1>Menu: </h1>
   <table class="menuTable">
     <tr class="menu" *ngFor="let dish of dishes">
-      <td class="menuItem" id="name">{{dish.name}}</td>
-      <td class="menuItem" id="type">{{dish.type}}</td>
-      <td class="menuItem" id="desc">{{dish.description}}</td>
-      <td class="menuItem" id="price">{{dish.price}}</td>
-      <button class="detailsbtn" [routerLink]="['/details', dish.id]">Details</button>
-      <button class="addButton" id="dish.id" (click)="addDishToCart(dish)">+</button>
+      <td class="menuItem" id="name" *ngIf="dish.available === true">{{dish.name}}</td>
+      <td class="menuItem" id="type" *ngIf="dish.available === true">{{dish.type}}</td>
+      <td class="menuItem" id="desc" *ngIf="dish.available === true">{{dish.description}}</td>
+      <td class="menuItem" id="price" *ngIf="dish.available === true">{{dish.price}}</td>
+      <button class="detailsbtn" [routerLink]="['/details', dish.id]" *ngIf="dish.available === true">Details</button>
+      <button class="addButton" id="dish.id" (click)="addDishToCart(dish)" *ngIf="dish.available === true">+</button>
     </tr>
   </table>
-    <!--<button (click)="addDish()" [routerLink]="['/menu']">add</button>-->
   </div>
 <app-cart></app-cart>
 </div>

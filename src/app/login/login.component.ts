@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {LoginService} from '../shared/login.service';
+import {User} from '../shared/user';
 
 @Component({
   selector: 'app-login',
@@ -8,6 +9,8 @@ import {LoginService} from '../shared/login.service';
 })
 export class LoginComponent implements OnInit {
 
+  model = new User('admin', 'admin');
+
 
   constructor(private loginService: LoginService) {
   }
@@ -15,7 +18,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
   }
   verifyUser(login: string, password: string) {
-    this.loginService.verifyUser(login, password);
+   let user = new User(login, password);
+    this.loginService.verifyUser(user || this.model);
   }
 }
-

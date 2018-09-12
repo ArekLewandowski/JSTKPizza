@@ -1,16 +1,16 @@
 import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core';
 import {Dish} from '../shared/dish';
-import {MenuService} from '../shared/menu.service';
 import {Subject} from 'rxjs';
+import {MenuService} from '../shared/menu.service';
 import {OrderServiceService} from '../shared/order-service.service';
 import {takeUntil} from 'rxjs/operators';
 
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+  selector: 'app-admin-menu',
+  templateUrl: './admin-menu.component.html',
+  styleUrls: ['./admin-menu.component.scss']
 })
-export class MenuComponent implements OnInit , OnDestroy {
+export class AdminMenuComponent implements OnInit, OnDestroy{
   @Output() getPizzas = new EventEmitter<Dish[]>();
   private destroy$: Subject<void> = new Subject<void>();
   order: Dish[];
@@ -29,8 +29,7 @@ export class MenuComponent implements OnInit , OnDestroy {
     'price': 22,
     'available': true,
   }];
-  constructor(private menuService: MenuService,
-              private orderService: OrderServiceService) { }
+  constructor(private menuService: MenuService) { }
 
   ngOnInit() {
     this.menuService.dishes$
@@ -53,8 +52,15 @@ export class MenuComponent implements OnInit , OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe(dishes => this.dishes = dishes);
   }
-  addDishToCart(dish: Dish) {
-    this.orderService.addDishToCart(dish);
+  setAvailable(dish) {
+    this.dish = dish;
+    this.dish.available = true;
+    this.menuService.setAvailable(this.dish);
+  }
+  setNotAvailable(dish) {
+    this.dish = dish;
+    this.dish.available = false;
+    this.menuService.setNotAvailable(this.dish);
   }
   ngOnDestroy(): void {
     this.destroy$.next();
@@ -65,3 +71,4 @@ export class MenuComponent implements OnInit , OnDestroy {
   }
 
 }
+
