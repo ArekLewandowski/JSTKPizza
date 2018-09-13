@@ -1,7 +1,7 @@
-<div class="container">
+<div class="container" *ngIf="order">
   <div class="orderDetails"><h1>Order: {{order.id}}</h1>
     <p>User: {{order.address.firstName}} {{order.address.lastName}}</p>
-    <p>Ordered: <span *ngFor="let dish of order.dishIds"><br>{{dish.name}}, </span></p>
+    <p>Ordered: <span *ngFor="let dish of order.dishIds"><br>{{dish?.name}}, </span></p>
     <h2>Status: {{order.status}}</h2>
   </div>
   <div>

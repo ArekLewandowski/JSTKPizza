@@ -8,7 +8,7 @@
              [(ngModel)]="model.firstName"
              name='firstName'
              #firstName="ngModel">
-      <div [hidden]='firstName.valid || firstName.pristine'
+      <div [hidden]='firstName.valid'
            class="alert">
         First Name is required
       </div>
@@ -20,7 +20,7 @@
              [(ngModel)]="model.lastName"
              name='lastName'
              #lastName="ngModel">
-      <div [hidden]='lastName.valid || lastName.pristine'
+      <div [hidden]='lastName.valid'
            class="alert">
         Last Name is required
       </div>
@@ -59,7 +59,7 @@
   </form>
 </div>
 
-<div [hidden]="!submitted">
+<div id="confirmedAddress" [hidden]="!submitted">
   <h2>You submitted the following:</h2>
   <div class="row">
     <div class="col-xs-3">First Name</div>

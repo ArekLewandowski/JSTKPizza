@@ -4,7 +4,7 @@
 }
 
 .menuCont tr:hover {
-  background-color: #f1e94d;
+  background-color: #294653;
 }
 
 .container{
@@ -34,13 +34,12 @@
 }
 
 .menuHeader{
-  font-size: 25px;
-  font-family: 'Gamja Flower', bold, serif;
+  font-size: 2rem;
+  font-family: 'M PLUS Rounded 1c', bold, serif;
 }
 
 .menu{
-  font-size: 20px;
-  font-family: 'Gamja Flower', cursive;
+  font-size: 2.5rem;
 }
 .btn{
   background-color: #65b2b8;
@@ -49,7 +48,7 @@
   padding: 5px;
   margin: 1%;
   text-align: center;
-  font-size: 15px;
+  font-size: 2rem;
   font-family: 'M PLUS Rounded 1c', sans-serif;
   width: 10%;
 }
@@ -64,13 +63,4 @@
   display: flex;
   justify-content: space-around;
 }
-#name{
-  font-size: 20px;
-}
-#desc{
-  font-size: 15px;
-}
-#price{
-  font-family: 'M PLUS Rounded 1c', bold, serif;
-  font-size: 15px;
-}
+

@@ -27,7 +27,7 @@ export class FormComponent implements OnInit {
   }
   confirmOrder() {
     this.orderService.confirmOrder();
-    this.router.navigate(['admin']);
+    this.router.navigate(['menu']);
   }
 
 }

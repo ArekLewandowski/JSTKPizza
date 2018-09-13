@@ -50,6 +50,8 @@ export class OrderServiceService {
     };
     this.id++;
     this.httpClient.post('http://localhost:3000/orders', this.order).subscribe();
+    this.dishesAdded = [];
+    localStorage.clear();
   }
 
   getOrders(): void {

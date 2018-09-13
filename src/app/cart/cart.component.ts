@@ -14,7 +14,7 @@ import {takeUntil} from 'rxjs/operators';
 export class CartComponent implements OnInit, OnDestroy {
   @Output() getPizzas = new EventEmitter<Order>();
   private destroy$: Subject<void> = new Subject<void>();
-  private dishes: Dish[] = [];
+  dishes: Dish[] = [];
   sum: number;
 
   constructor(private menuService: MenuService,

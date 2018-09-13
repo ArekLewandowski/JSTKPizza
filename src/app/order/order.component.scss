@@ -5,6 +5,7 @@
   background-color: rgba(145, 171, 109, 0.7);
   margin: 5%;
   border-radius: 10%;
+  font-size: 2rem;
 }
 .btn {
     background-color: #65b2b8;
@@ -13,7 +14,12 @@
     padding: 5px;
     margin: 1%;
     text-align: center;
-    font-size: 15px;
+    font-size: 2rem;
     font-family: 'M PLUS Rounded 1c', sans-serif;
     width: 100%;
+}
+.orderDetails{
+  background-color: #43A047;
+  padding: 5%;
+  border-radius: 20%;
 }

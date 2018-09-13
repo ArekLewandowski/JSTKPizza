@@ -15,7 +15,7 @@ const routes: Routes = [
   {path: 'menu', component: MenuComponent},
   {path: '', component: MenuComponent},
   {path: 'details/:id', component: DishDetailsComponent},
-  {path: 'orders/:id', component: OrderComponent},
+  {path: 'orders/:id', component: OrderComponent, canActivate: [AuthService]},
   {path: 'cart', component: CustomerComponent},
   {path: 'admin', component: AdministrationComponent, canActivate: [AuthService]},
   {path: 'login', component: LoginComponent},

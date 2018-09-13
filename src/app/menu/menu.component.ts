@@ -36,7 +36,7 @@ export class MenuComponent implements OnInit , OnDestroy {
     this.menuService.dishes$
       .pipe(takeUntil(this.destroy$))
       .subscribe(dishes => this.dishes = dishes);
-    this.menuService.getDishesFromCart();
+    this.menuService.getDishes();
   }
   getPizza() {
     this.menuService.getPizza()

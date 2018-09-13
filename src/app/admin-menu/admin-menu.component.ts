@@ -35,7 +35,7 @@ export class AdminMenuComponent implements OnInit, OnDestroy{
     this.menuService.dishes$
       .pipe(takeUntil(this.destroy$))
       .subscribe(dishes => this.dishes = dishes);
-    this.menuService.getDishesFromCart();
+    this.menuService.getDishes();
   }
   getPizza() {
     this.menuService.getPizza()
@@ -60,15 +60,14 @@ export class AdminMenuComponent implements OnInit, OnDestroy{
   setNotAvailable(dish) {
     this.dish = dish;
     this.dish.available = false;
-    this.menuService.setNotAvailable(this.dish);
+    this.menuService.setAvailable(this.dish);
+  }
+  getDishes() {
+    this.menuService.getDishes();
   }
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
   }
-  getDishes() {
-    this.menuService.getDishes();
-  }
-
 }
 
