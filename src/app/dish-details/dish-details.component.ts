@@ -34,4 +34,7 @@ export class DishDetailsComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.sub.unsubscribe();
   }
+  editDish(dish: Dish) {
+    this.menuService.setAvailable(dish);
+  }
 }

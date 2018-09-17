@@ -2,8 +2,28 @@
   <div class="dishDetails"><h1>Danie: {{dish.name}}</h1>
     <p>{{dish.type}}</p>
     <p>Description: {{dish.description}}</p>
-    <h2>Price: {{dish.price}}</h2>
+    <h2>Price: {{dish.price}} zł</h2>
+  </div>
+  <div>
+    <div>
+      <label>Change name:
+          <input [(ngModel)]="dish.name" placeholder="name"/>
+      </label>
+    </div>
+    <div>
+      <label>Change desc:
+          <input [(ngModel)]="dish.description" placeholder="name"/>
+      </label>
+    </div>
+    <div>
+      <label>Change price:
+          <input [(ngModel)]="dish.price" placeholder="name"/>
+      </label>
+    </div>
+    <div>
+      <button  class="button"  (click)="editDish(dish)">Save Changes</button>
+    </div>
   </div>
 </div>
-  <button class="backBtn" [routerLink]="['/adminmenu']"> Back to list</button>
+<button class="backBtn" [routerLink]="['/adminmenu']"> Back to list</button>
 

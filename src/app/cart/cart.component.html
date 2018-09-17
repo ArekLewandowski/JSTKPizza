@@ -9,8 +9,7 @@
         <td class="menuItem" id="name">{{dish.name}}</td>
         <td class="menuItem" id="type">{{dish.type}}</td>
         <td class="menuItem" id="desc">{{dish.description}}</td>
-        <td class="menuItem" id="price">{{dish.price}}</td>
-        <button class="detailsbtn" [routerLink]="['/details', dish.id]">Details</button>
+        <td class="menuItem" id="price">{{dish.price}} zł</td>
         <button class="removeButton" (click)="removeFromCart(dish)">-</button>
       </tr>
     </table>

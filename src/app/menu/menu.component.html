@@ -17,8 +17,7 @@
       <td class="menuItem" id="name" *ngIf="dish.available === true">{{dish.name}}</td>
       <td class="menuItem" id="type" *ngIf="dish.available === true">{{dish.type}}</td>
       <td class="menuItem" id="desc" *ngIf="dish.available === true">{{dish.description}}</td>
-      <td class="menuItem" id="price" *ngIf="dish.available === true">{{dish.price}}</td>
-      <button class="detailsbtn" [routerLink]="['/details', dish.id]" *ngIf="dish.available === true">Details</button>
+      <td class="menuItem" id="price" *ngIf="dish.available === true">{{dish.price}} zł</td>
       <button class="addButton" id="dish.id" (click)="addDishToCart(dish)" *ngIf="dish.available === true">+</button>
     </tr>
   </table>

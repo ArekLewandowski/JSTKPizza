@@ -25,11 +25,11 @@ export class OrderListComponent implements OnInit, OnDestroy {
       .subscribe(orders => this.orders = orders);
     this.orderService.getOrders();
      this.interval = setInterval(() => {
-        this.orderService.orders$
-          .pipe(takeUntil(this.destroy$))
-          .subscribe(orders => this.orders = orders);
-        this.orderService.getOrders();
-      }, 20000);
+      this.orderService.orders$
+        .pipe(takeUntil(this.destroy$))
+        .subscribe(orders => this.orders = orders);
+      this.orderService.getOrders();
+    }, 20000);
   }
   ngOnDestroy(): void {
     this.destroy$.next();

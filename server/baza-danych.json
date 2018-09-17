@@ -6,7 +6,7 @@
       "isAvailable": false,
       "description": "Sos, ser",
       "type": "pizza",
-      "price": 22,
+      "price": "21",
       "available": true
     },
     {
@@ -15,17 +15,17 @@
       "isAvailable": true,
       "description": "Sos, ser, pieczarki",
       "type": "pizza",
-      "price": 23.5,
+      "price": "25",
       "available": true
     },
     {
       "id": 3,
-      "name": "Pizza Espana",
+      "name": "Pizza Chorizo",
       "isAvailable": true,
       "description": "Chorizo, chili, tomatoes",
       "type": "pizza",
-      "price": 23.9,
-      "available": true
+      "price": "33",
+      "available": false
     },
     {
       "id": 4,
@@ -42,7 +42,7 @@
       "isAvailable": false,
       "description": "Sos boloński z szynką i kukurydzą",
       "type": "pasta",
-      "price": 17.5,
+      "price": "20",
       "available": true
     },
     {
@@ -701,7 +701,7 @@
         "city": "Poznań",
         "postCode": 60687
       },
-      "status": "Confirmed",
+      "status": "completed",
       "id": 25
     }
   ],
