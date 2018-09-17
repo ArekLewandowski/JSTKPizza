@@ -16,7 +16,7 @@
       "description": "Sos, ser, pieczarki",
       "type": "pizza",
       "price": 23.5,
-      "available": false
+      "available": true
     },
     {
       "id": 3,
@@ -25,7 +25,7 @@
       "description": "Chorizo, chili, tomatoes",
       "type": "pizza",
       "price": 23.9,
-      "available": false
+      "available": true
     },
     {
       "id": 4,
@@ -97,24 +97,6 @@
       "description": "Sos, ser, cream",
       "type": "pizza",
       "price": "24",
-      "available": true
-    },
-    {
-      "id": 12,
-      "name": "Pizza Kebab",
-      "isAvailable": true,
-      "description": "Sos, ser, kebab",
-      "type": "pizza",
-      "price": 23.5,
-      "available": true
-    },
-    {
-      "id": 13,
-      "name": "Pizza Vege",
-      "isAvailable": false,
-      "description": "Vege cheese, chili, tomatoes",
-      "type": "pizza",
-      "price": 26.9,
       "available": true
     }
   ],
@@ -285,7 +267,7 @@
         "city": "Poznań",
         "postCode": 60687
       },
-      "status": "Confirmed"
+      "status": "completed"
     },
     {
       "dishIds": [
@@ -410,108 +392,6 @@
           "available": true
         },
         {
-          "id": 8,
-          "name": "Fanta",
-          "isAvailable": false,
-          "description": "Fanta 0.5L",
-          "type": "drinks",
-          "price": 4.5,
-          "available": true
-        },
-        {
-          "id": 4,
-          "name": "Spagetti Bolognese",
-          "isAvailable": false,
-          "description": "Sos boloński",
-          "type": "pasta",
-          "price": 14,
-          "available": true
-        }
-      ],
-      "address": {
-        "id": 1,
-        "firstName": "John",
-        "lastName": "Lewandowski",
-        "street": "Batorego",
-        "flatNr": null,
-        "city": "Poznań",
-        "postCode": 60687
-      },
-      "status": "send",
-      "id": 7
-    },
-    {
-      "dishIds": [
-        {
-          "id": 3,
-          "name": "Pizza Espana",
-          "isAvailable": true,
-          "description": "Chorizo, chili, tomatoes",
-          "type": "pizza",
-          "price": 23.9,
-          "available": true
-        },
-        {
-          "id": 8,
-          "name": "Fanta",
-          "isAvailable": false,
-          "description": "Fanta 0.5L",
-          "type": "drinks",
-          "price": 4.5,
-          "available": true
-        },
-        {
-          "id": 4,
-          "name": "Spagetti Bolognese",
-          "isAvailable": false,
-          "description": "Sos boloński",
-          "type": "pasta",
-          "price": 14,
-          "available": true
-        },
-        {
-          "id": 9,
-          "name": "Apple juice",
-          "isAvailable": false,
-          "description": "Juice 0.4L",
-          "type": "drinks",
-          "price": 5.5,
-          "available": true
-        },
-        {
-          "id": 6,
-          "name": "Coca-cola",
-          "isAvailable": false,
-          "description": "Coca-cola 0.5L",
-          "type": "drinks",
-          "price": 4.5,
-          "available": true
-        }
-      ],
-      "address": {
-        "id": 1,
-        "firstName": "John",
-        "lastName": "Lewandowski",
-        "street": "Batorego",
-        "flatNr": null,
-        "city": "Poznań",
-        "postCode": 60687
-      },
-      "status": "completed",
-      "id": 8
-    },
-    {
-      "dishIds": [
-        {
-          "id": 3,
-          "name": "Pizza Espana",
-          "isAvailable": true,
-          "description": "Chorizo, chili, tomatoes",
-          "type": "pizza",
-          "price": 23.9,
-          "available": true
-        },
-        {
           "id": 6,
           "name": "Coca-cola",
           "isAvailable": false,
@@ -550,300 +430,6 @@
       },
       "status": "Confirmed",
       "id": 9
-    },
-    {
-      "id": 10,
-      "dishIds": [],
-      "address": {
-        "id": 1,
-        "firstName": "Barack",
-        "lastName": "Obama",
-        "street": "White House",
-        "flatNr": 1,
-        "city": "Waszyngton DC",
-        "postCode": 99911
-      },
-      "status": "Confirmed"
-    },
-    {
-      "id": 11,
-      "dishIds": [],
-      "address": {
-        "id": 1,
-        "firstName": "Barack",
-        "lastName": "Obama",
-        "street": "White House",
-        "flatNr": 1,
-        "city": "Waszyngton DC",
-        "postCode": 99911
-      },
-      "status": "Confirmed"
-    },
-    {
-      "id": 12,
-      "dishIds": [],
-      "address": {
-        "id": 1,
-        "firstName": "Barack",
-        "lastName": "Obama",
-        "street": "White House",
-        "flatNr": 1,
-        "city": "Waszyngton DC",
-        "postCode": 99911
-      },
-      "status": "Confirmed"
-    },
-    {
-      "id": 13,
-      "dishIds": [],
-      "address": {
-        "id": 1,
-        "firstName": "Barack",
-        "lastName": "Obama",
-        "street": "White House",
-        "flatNr": 1,
-        "city": "Waszyngton DC",
-        "postCode": 99911
-      },
-      "status": "completed"
-    },
-    {
-      "id": 14,
-      "dishIds": [],
-      "address": {
-        "id": 1,
-        "firstName": "Barack",
-        "lastName": "Obama",
-        "street": "White House",
-        "flatNr": 1,
-        "city": "Waszyngton DC",
-        "postCode": 99911
-      },
-      "status": "Confirmed"
-    },
-    {
-      "id": 15,
-      "dishIds": [],
-      "address": {
-        "id": 1,
-        "firstName": "Barack",
-        "lastName": "Obama",
-        "street": "White House",
-        "flatNr": 1,
-        "city": "Waszyngton DC",
-        "postCode": 99911
-      },
-      "status": "Confirmed"
-    },
-    {
-      "dishIds": [
-        {
-          "id": 1,
-          "name": "Pizza Margherita",
-          "isAvailable": false,
-          "description": "Sos, ser",
-          "type": "pizza",
-          "price": 22,
-          "available": true
-        },
-        {
-          "id": 2,
-          "name": "Pizza Funghi",
-          "isAvailable": true,
-          "description": "Sos, ser, pieczarki",
-          "type": "pizza",
-          "price": 23.5,
-          "available": true
-        },
-        {
-          "id": 6,
-          "name": "Coca-cola",
-          "isAvailable": false,
-          "description": "Coca-cola 0.5L",
-          "type": "drinks",
-          "price": 4.5,
-          "available": true
-        },
-        {
-          "id": 6,
-          "name": "Coca-cola",
-          "isAvailable": false,
-          "description": "Coca-cola 0.5L",
-          "type": "drinks",
-          "price": 4.5,
-          "available": true
-        }
-      ],
-      "address": {
-        "id": 1,
-        "firstName": "Barack",
-        "lastName": "Obama",
-        "street": "White House",
-        "flatNr": null,
-        "city": "Waszyngton DC",
-        "postCode": 99911
-      },
-      "status": "Confirmed",
-      "id": 16
-    },
-    {
-      "dishIds": [
-        {
-          "id": 1,
-          "name": "Pizza Margherita",
-          "isAvailable": false,
-          "description": "Sos, ser",
-          "type": "pizza",
-          "price": 22,
-          "available": true
-        },
-        {
-          "id": 2,
-          "name": "Pizza Funghi",
-          "isAvailable": true,
-          "description": "Sos, ser, pieczarki",
-          "type": "pizza",
-          "price": 23.5,
-          "available": true
-        },
-        {
-          "id": 3,
-          "name": "Pizza Espana",
-          "isAvailable": true,
-          "description": "Chorizo, chili, tomatoes",
-          "type": "pizza",
-          "price": 23.9,
-          "available": true
-        }
-      ],
-      "address": {
-        "id": 1,
-        "firstName": "John",
-        "lastName": "Lewandowski",
-        "street": "Batorego",
-        "flatNr": null,
-        "city": "Poznań",
-        "postCode": 60687
-      },
-      "status": "Confirmed",
-      "id": 17
-    },
-    {
-      "dishIds": [
-        {
-          "id": 1,
-          "name": "Pizza Margherita",
-          "isAvailable": false,
-          "description": "Sos, ser",
-          "type": "pizza",
-          "price": 22,
-          "available": true
-        },
-        {
-          "id": 2,
-          "name": "Pizza Funghi",
-          "isAvailable": true,
-          "description": "Sos, ser, pieczarki",
-          "type": "pizza",
-          "price": 23.5,
-          "available": true
-        }
-      ],
-      "address": {
-        "id": 1,
-        "firstName": "Arkadiusz",
-        "lastName": "Milik",
-        "street": "PZPN",
-        "flatNr": null,
-        "city": "Katowice",
-        "postCode": 60687
-      },
-      "status": "completed",
-      "id": 18
-    },
-    {
-      "dishIds": [
-        {
-          "id": 1,
-          "name": "Pizza Margherita",
-          "isAvailable": false,
-          "description": "Sos, ser",
-          "type": "pizza",
-          "price": 22,
-          "available": true
-        },
-        {
-          "id": 2,
-          "name": "Pizza Funghi",
-          "isAvailable": true,
-          "description": "Sos, ser, pieczarki",
-          "type": "pizza",
-          "price": 23.5,
-          "available": true
-        },
-        {
-          "id": 4,
-          "name": "Spagetti Bolognese",
-          "isAvailable": false,
-          "description": "Sos boloński",
-          "type": "pasta",
-          "price": 14,
-          "available": true
-        },
-        {
-          "id": 7,
-          "name": "Sprite",
-          "isAvailable": false,
-          "description": "Sprite 0.5L",
-          "type": "drinks",
-          "price": 4.5,
-          "available": true
-        },
-        {
-          "id": 6,
-          "name": "Coca-cola",
-          "isAvailable": false,
-          "description": "Coca-cola 0.5L",
-          "type": "drinks",
-          "price": 4.5,
-          "available": true
-        }
-      ],
-      "address": {
-        "id": 1,
-        "firstName": "Barack",
-        "lastName": "Obama",
-        "street": "White House",
-        "flatNr": null,
-        "city": "Waszyngton DC",
-        "postCode": 99911
-      },
-      "status": "Confirmed",
-      "id": 19
-    },
-    {
-      "dishIds": [
-        {
-          "id": 1,
-          "name": "Pizza Margherita",
-          "isAvailable": false,
-          "description": "Sos, ser",
-          "type": "pizza",
-          "price": 22,
-          "available": true
-        }
-      ],
-      "address": {
-        "id": 1,
-        "firstName": "John",
-        "lastName": "Wayne",
-        "street": "Kennedy Av.",
-        "flatNr": 30,
-        "city": "Los Angeles",
-        "postCode": 60574
-      },
-      "status": "prepared",
-      "id": 20
     },
     {
       "dishIds": [
@@ -920,8 +506,203 @@
         "city": "Katowice",
         "postCode": 60687
       },
-      "status": "Confirmed",
+      "status": "send",
       "id": 21
+    },
+    {
+      "dishIds": [
+        {
+          "id": 8,
+          "name": "Fanta",
+          "isAvailable": false,
+          "description": "Fanta 0.5L",
+          "type": "drinks",
+          "price": 4.5,
+          "available": true
+        },
+        {
+          "id": 9,
+          "name": "Apple juice",
+          "isAvailable": false,
+          "description": "Juice 0.4L",
+          "type": "drinks",
+          "price": 5.5,
+          "available": true
+        },
+        {
+          "id": 11,
+          "name": "Pizza Carbonarra",
+          "isAvailable": false,
+          "description": "Sos, ser, cream",
+          "type": "pizza",
+          "price": "24",
+          "available": true
+        },
+        {
+          "id": 13,
+          "name": "Pizza Vege",
+          "isAvailable": false,
+          "description": "Vege cheese, chili, tomatoes",
+          "type": "pizza",
+          "price": 26.9,
+          "available": true
+        },
+        {
+          "id": 12,
+          "name": "Pizza Kebab",
+          "isAvailable": true,
+          "description": "Sos, ser, kebab",
+          "type": "pizza",
+          "price": 23.5,
+          "available": true
+        },
+        {
+          "id": 11,
+          "name": "Pizza Carbonarra",
+          "isAvailable": false,
+          "description": "Sos, ser, cream",
+          "type": "pizza",
+          "price": "24",
+          "available": true
+        },
+        {
+          "id": 10,
+          "name": "Orange juice",
+          "isAvailable": false,
+          "description": "Juice 0.4L",
+          "type": "drinks",
+          "price": 5.5,
+          "available": true
+        }
+      ],
+      "address": {
+        "id": 1,
+        "firstName": "John",
+        "lastName": "Lewandowski",
+        "street": "Batorego",
+        "flatNr": null,
+        "city": "Poznań",
+        "postCode": 60687
+      },
+      "status": "Confirmed",
+      "id": 22
+    },
+    {
+      "dishIds": [
+        {
+          "id": 2,
+          "name": "Pizza Funghi",
+          "isAvailable": true,
+          "description": "Sos, ser, pieczarki",
+          "type": "pizza",
+          "price": 23.5,
+          "available": true
+        },
+        {
+          "id": 9,
+          "name": "Apple juice",
+          "isAvailable": false,
+          "description": "Juice 0.4L",
+          "type": "drinks",
+          "price": 5.5,
+          "available": true
+        },
+        {
+          "id": 10,
+          "name": "Orange juice",
+          "isAvailable": false,
+          "description": "Juice 0.4L",
+          "type": "drinks",
+          "price": 5.5,
+          "available": true
+        }
+      ],
+      "address": {
+        "id": 1,
+        "firstName": "Barack",
+        "lastName": "Obama",
+        "street": "White House",
+        "flatNr": null,
+        "city": "Waszyngton DC",
+        "postCode": 99911
+      },
+      "status": "Confirmed",
+      "id": 23
+    },
+    {
+      "dishIds": [
+        {
+          "id": 4,
+          "name": "Spagetti Bolognese",
+          "isAvailable": false,
+          "description": "Sos boloński",
+          "type": "pasta",
+          "price": 14,
+          "available": true
+        },
+        {
+          "id": 5,
+          "name": "Spagetti Siciliana",
+          "isAvailable": false,
+          "description": "Sos boloński z szynką i kukurydzą",
+          "type": "pasta",
+          "price": 17.5,
+          "available": true
+        }
+      ],
+      "address": {
+        "id": 1,
+        "firstName": "Barack",
+        "lastName": "Obama",
+        "street": "White House",
+        "flatNr": null,
+        "city": "Waszyngton DC",
+        "postCode": 99911
+      },
+      "status": "Confirmed",
+      "id": 24
+    },
+    {
+      "dishIds": [
+        {
+          "id": 2,
+          "name": "Pizza Funghi",
+          "isAvailable": true,
+          "description": "Sos, ser, pieczarki",
+          "type": "pizza",
+          "price": 23.5,
+          "available": true
+        },
+        {
+          "id": 9,
+          "name": "Apple juice",
+          "isAvailable": false,
+          "description": "Juice 0.4L",
+          "type": "drinks",
+          "price": 5.5,
+          "available": true
+        },
+        {
+          "id": 11,
+          "name": "Pizza Carbonarra",
+          "isAvailable": false,
+          "description": "Sos, ser, cream",
+          "type": "pizza",
+          "price": "24",
+          "available": true
+        }
+      ],
+      "address": {
+        "id": 1,
+        "firstName": "John",
+        "lastName": "Lewandowski",
+        "street": "Batorego",
+        "flatNr": null,
+        "city": "Poznań",
+        "postCode": 60687
+      },
+      "status": "Confirmed",
+      "id": 25
     }
   ],
   "users": [

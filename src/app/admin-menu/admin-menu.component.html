@@ -28,8 +28,11 @@
                 (click)="setNotAvailable(dish)" *ngIf="dish.available === true">
           <i class="fas fa-check fa-2x"></i>
         </button>
+        <button class="removeButton" id="remove"
+                (click)="removeDish(dish)">REMOVE</button>
       </tr>
     </table>
+    <button class="addDish" [routerLink]="['/newdish']">Add Dish</button>
   </div>
 </div>
 

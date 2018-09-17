@@ -4,6 +4,7 @@ import {Subject} from 'rxjs';
 import {Order} from '../shared/order';
 import {takeUntil} from 'rxjs/operators';
 import {OrderServiceService} from '../shared/order-service.service';
+import Timer = NodeJS.Timer;
 
 @Component({
   selector: 'app-order-list',
@@ -15,6 +16,7 @@ export class OrderListComponent implements OnInit, OnDestroy {
   private destroy$: Subject<void> = new Subject<void>();
   order: Order;
   orders: Order[] = [];
+  interval: Timer;
   constructor(private orderService: OrderServiceService) { }
 
   ngOnInit() {
@@ -22,9 +24,19 @@ export class OrderListComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.destroy$))
       .subscribe(orders => this.orders = orders);
     this.orderService.getOrders();
+     this.interval = setInterval(() => {
+        this.orderService.orders$
+          .pipe(takeUntil(this.destroy$))
+          .subscribe(orders => this.orders = orders);
+        this.orderService.getOrders();
+      }, 20000);
   }
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();
+    clearInterval(this.interval);
+  }
+  deleteOrder(order: Order) {
+    this.orderService.deleteOrder(order);
   }
 }

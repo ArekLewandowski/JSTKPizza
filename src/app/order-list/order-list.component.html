@@ -7,6 +7,7 @@
       <td class="menuItem"><span *ngFor="let dish of order.dishIds">{{dish.id}}, </span></td>
       <td class="menuItem" id="status: ">{{order.status | uppercase}}</td>
       <button class="detailsbtn" [routerLink]="['/orders', order.id]"><i class="fas fa-info-circle"></i></button>
+      <button class="detailsbtn" (click)="deleteOrder(order)">DELETE</button>
     </tr>
   </table>
 </div>

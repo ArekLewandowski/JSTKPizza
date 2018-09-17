@@ -12,9 +12,11 @@ import {Router} from '@angular/router';
   styleUrls: ['./customer.component.scss']
 })
 export class CustomerComponent implements OnInit {
-  constructor() {
+  cart: Dish[] = [];
+  constructor(private orderService: OrderServiceService) {
   }
 
   ngOnInit() {
+    this.cart = this.orderService.dishesAdded;
   }
 }

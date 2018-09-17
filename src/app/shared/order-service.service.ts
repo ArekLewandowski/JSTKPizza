@@ -4,6 +4,7 @@ import {Order} from './order';
 import {Observable, Subject} from 'rxjs';
 import {AddressFormData} from './address-form-data';
 import {HttpClient} from '@angular/common/http';
+import {Router} from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -17,7 +18,8 @@ export class OrderServiceService {
   private dishIndex: number;
   sum$: Subject<number> = new Subject();
 
-  constructor(private httpClient: HttpClient) {
+  constructor(private httpClient: HttpClient,
+              private router: Router) {
   }
 
   addDishToCart(dish: Dish) {
@@ -50,7 +52,8 @@ export class OrderServiceService {
     };
     this.id++;
     this.httpClient.post('http://localhost:3000/orders', this.order).subscribe();
-    this.dishesAdded = [];
+    this.router.navigate(['summary']);
+    // this.dishesAdded = [];
     localStorage.clear();
   }
 
@@ -62,5 +65,8 @@ export class OrderServiceService {
   }
   changeStatus(order: Order) {
     this.httpClient.put(`http://localhost:3000/orders/` + order.id, order).subscribe();
+  }
+  deleteOrder(order: Order){
+    this.httpClient.delete(`http://localhost:3000/orders/` + order.id).subscribe(() => {this.getOrders(); } );
   }
 }

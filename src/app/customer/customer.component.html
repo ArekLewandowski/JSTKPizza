@@ -1,6 +1,7 @@
 <div class="main">
 <div class="customer">
   <app-cart></app-cart>
-  <app-form></app-form>
+  <app-form *ngIf="cart.length>0"></app-form>
 </div>
+  <button class="backBtn" [routerLink]="['/menu']"> Back to menu</button>
 </div>

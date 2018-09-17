@@ -65,6 +65,9 @@ export class AdminMenuComponent implements OnInit, OnDestroy{
   getDishes() {
     this.menuService.getDishes();
   }
+  removeDish(dish: Dish) {
+    this.menuService.removeDish(dish);
+  }
   ngOnDestroy(): void {
     this.destroy$.next();
     this.destroy$.complete();

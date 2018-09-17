@@ -6,7 +6,7 @@ import {HttpClientTestingModule, HttpTestingController} from '@angular/common/ht
 import {RouterTestingModule} from '@angular/router/testing';
 import {isBoolean} from 'util';
 
-describe('MenuService', () => {
+fdescribe('MenuService', () => {
 
   let menuService: MenuService;
   let mockedBackend: HttpTestingController;
@@ -114,5 +114,29 @@ describe('MenuService', () => {
     mockedBackend.expectNone('http://localhost:3000/dishes/' + mockedDish.id);
     // then
     expect(menuService.setAvailable).toHaveBeenCalled();
+  });
+  it('should add dish', () => {
+    // given
+    spyOn(menuService, 'addDish');
+    let dishes: Dish[];
+    menuService.dishes$.subscribe(res => dishes = res);
+
+    // when
+    menuService.addDish(mockedDish);
+    mockedBackend.expectNone('http://localhost:3000/dishes/');
+    // then
+    expect(menuService.addDish).toHaveBeenCalled();
+  });
+  it('should delete dish', () => {
+    // given
+    spyOn(menuService, 'removeDish');
+    let dishes: Dish[];
+    menuService.dishes$.subscribe(res => dishes = res);
+
+    // when
+    menuService.removeDish(mockedDish);
+    mockedBackend.expectNone('http://localhost:3000/dishes/' + mockedDish.id);
+    // then
+    expect(menuService.removeDish).toHaveBeenCalled();
   });
 });

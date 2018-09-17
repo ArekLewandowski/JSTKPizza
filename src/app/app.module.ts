@@ -18,6 +18,8 @@ import { AuthService } from './shared/auth.service';
 import { LoginComponent } from './login/login.component';
 import { FormsModule } from '@angular/forms';
 import { AdminMenuComponent } from './admin-menu/admin-menu.component';
+import { SummaryComponent } from './summary/summary.component';
+import { NewDishFormComponent } from './new-dish-form/new-dish-form.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { AdminMenuComponent } from './admin-menu/admin-menu.component';
     CartComponent,
     FormComponent,
     LoginComponent,
-    AdminMenuComponent
+    AdminMenuComponent,
+    SummaryComponent,
+    NewDishFormComponent
   ],
   imports: [
     HttpClientModule,

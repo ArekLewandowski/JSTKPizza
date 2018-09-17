@@ -29,4 +29,11 @@ export class MenuService {
   setAvailable(dish: Dish) {
     this.httpClient.put(`http://localhost:3000/dishes/` + dish.id, dish).subscribe();
   }
+  addDish(dish: Dish) {
+    this.httpClient.post(`http://localhost:3000/dishes`, dish).subscribe();
+    this.getDishes();
+  }
+  removeDish(dish: Dish) {
+    this.httpClient.delete(`http://localhost:3000/dishes/` + dish.id).subscribe(() => {this.getDishes(); } );
+  }
 }

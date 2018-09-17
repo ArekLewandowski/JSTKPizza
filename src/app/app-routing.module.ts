@@ -10,6 +10,8 @@ import {CustomerComponent} from './customer/customer.component';
 import {OrderListComponent} from './order-list/order-list.component';
 import {OrderComponent} from './order/order.component';
 import {AdminMenuComponent} from './admin-menu/admin-menu.component';
+import {SummaryComponent} from './summary/summary.component';
+import {NewDishFormComponent} from './new-dish-form/new-dish-form.component';
 
 const routes: Routes = [
   {path: 'menu', component: MenuComponent},
@@ -20,8 +22,10 @@ const routes: Routes = [
   {path: 'admin', component: AdministrationComponent, canActivate: [AuthService]},
   {path: 'login', component: LoginComponent},
   {path: 'form', component: FormComponent},
+  {path: 'summary', component: SummaryComponent},
   {path: 'orders', component: OrderListComponent,  canActivate: [AuthService]},
   {path: 'adminmenu', component: AdminMenuComponent,  canActivate: [AuthService]},
+  {path: 'newdish', component: NewDishFormComponent,  canActivate: [AuthService]},
   ];
 
 @NgModule({

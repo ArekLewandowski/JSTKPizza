@@ -12,7 +12,8 @@ export class FormComponent implements OnInit {
 
   model = new AddressFormData(1, '', '', '', null , '', null );
   submitted = false;
-  onSubmit(address: AddressFormData) { this.submitted = true;
+  onSubmit(address: AddressFormData) {
+    this.submitted = true;
     this.orderService.addAddress(address);
   }
   get diagnostic() { return JSON.stringify(this.model); }
@@ -27,7 +28,6 @@ export class FormComponent implements OnInit {
   }
   confirmOrder() {
     this.orderService.confirmOrder();
-    this.router.navigate(['menu']);
   }
 
 }
