@@ -25,7 +25,7 @@
       "description": "Chorizo, chili, tomatoes",
       "type": "pizza",
       "price": "33",
-      "available": false
+      "available": true
     },
     {
       "id": 4,
@@ -703,6 +703,132 @@
       },
       "status": "completed",
       "id": 25
+    },
+    {
+      "id": 26,
+      "dishIds": [
+        {
+          "id": 5,
+          "name": "Spagetti Siciliana",
+          "isAvailable": false,
+          "description": "Sos boloński z szynką i kukurydzą",
+          "type": "pasta",
+          "price": "20",
+          "available": true
+        }
+      ],
+      "address": {
+        "id": 1,
+        "firstName": "John",
+        "lastName": "Lewandowski",
+        "street": "Batorego",
+        "flatNr": null,
+        "city": "Poznań",
+        "postCode": 60687
+      },
+      "status": "Confirmed"
+    },
+    {
+      "dishIds": [
+        {
+          "id": 5,
+          "name": "Spagetti Siciliana",
+          "isAvailable": false,
+          "description": "Sos boloński z szynką i kukurydzą",
+          "type": "pasta",
+          "price": "20",
+          "available": true
+        },
+        {
+          "id": 6,
+          "name": "Coca-cola",
+          "isAvailable": false,
+          "description": "Coca-cola 0.5L",
+          "type": "drinks",
+          "price": 4.5,
+          "available": true
+        },
+        {
+          "id": 9,
+          "name": "Apple juice",
+          "isAvailable": false,
+          "description": "Juice 0.4L",
+          "type": "drinks",
+          "price": 5.5,
+          "available": true
+        },
+        {
+          "id": 1,
+          "name": "Pizza Margherita",
+          "isAvailable": false,
+          "description": "Sos, ser",
+          "type": "pizza",
+          "price": "21",
+          "available": true
+        }
+      ],
+      "address": {
+        "id": 1,
+        "firstName": "Barack",
+        "lastName": "Obama",
+        "street": "White House",
+        "flatNr": null,
+        "city": "Waszyngton DC",
+        "postCode": 99911
+      },
+      "status": "Confirmed",
+      "id": 27
+    },
+    {
+      "dishIds": [
+        {
+          "id": 2,
+          "name": "Pizza Funghi",
+          "isAvailable": true,
+          "description": "Sos, ser, pieczarki",
+          "type": "pizza",
+          "price": "25",
+          "available": true
+        },
+        {
+          "id": 4,
+          "name": "Spagetti Bolognese",
+          "isAvailable": false,
+          "description": "Sos boloński",
+          "type": "pasta",
+          "price": 14,
+          "available": true
+        },
+        {
+          "id": 6,
+          "name": "Coca-cola",
+          "isAvailable": false,
+          "description": "Coca-cola 0.5L",
+          "type": "drinks",
+          "price": 4.5,
+          "available": true
+        },
+        {
+          "id": 6,
+          "name": "Coca-cola",
+          "isAvailable": false,
+          "description": "Coca-cola 0.5L",
+          "type": "drinks",
+          "price": 4.5,
+          "available": true
+        }
+      ],
+      "address": {
+        "id": 1,
+        "firstName": "John",
+        "lastName": "Lewandowski",
+        "street": "Batorego",
+        "flatNr": null,
+        "city": "Poznań",
+        "postCode": 60687
+      },
+      "status": "Confirmed",
+      "id": 28
     }
   ],
   "users": [

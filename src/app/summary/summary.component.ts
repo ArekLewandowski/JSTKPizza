@@ -17,7 +17,7 @@ export class SummaryComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dishesOrdered = this.orderService.dishesAdded;
+    this.dishesOrdered = this.orderService.tempDishes;
     this.address = this.orderService.address;
     this.orderService.sum$.subscribe(res => this.sum = res);
   }

@@ -15,6 +15,7 @@ export class OrderServiceService {
   order: Order;
   address: AddressFormData;
   dishesAdded = (JSON.parse(localStorage.getItem('dishesAdded') ? localStorage.getItem('dishesAdded') : '[]') as Dish[]);
+  tempDishes: Dish[] = [];
   private dishIndex: number;
   sum$: Subject<number> = new Subject();
 
@@ -51,9 +52,10 @@ export class OrderServiceService {
       status: 'Confirmed',
     };
     this.id++;
+    this.tempDishes = this.dishesAdded;
     this.httpClient.post('http://localhost:3000/orders', this.order).subscribe();
     this.router.navigate(['summary']);
-    // this.dishesAdded = [];
+    this.dishesAdded = [];
     localStorage.clear();
   }
 
