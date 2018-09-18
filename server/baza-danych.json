@@ -98,6 +98,14 @@
       "type": "pizza",
       "price": "24",
       "available": true
+    },
+    {
+      "name": "Pizza Testowa",
+      "description": "Nic",
+      "type": "pizza",
+      "price": 100,
+      "available": true,
+      "id": 12
     }
   ],
   "orders": [
@@ -827,7 +835,7 @@
         "city": "Poznań",
         "postCode": 60687
       },
-      "status": "Confirmed",
+      "status": "completed",
       "id": 28
     }
   ],
